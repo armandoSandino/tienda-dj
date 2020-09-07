@@ -8,4 +8,61 @@
 
 {% block js %}
 
+
+<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+<!--
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+-->
+
+
+<script>
+
+
+    function accederConGoogle() {
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyCBnKJwuc9Fj85acr261jc1MDvqvKPdORQ",
+            authDomain: "django-tienda-421.firebaseapp.com",
+            databaseURL: "https://django-tienda-421.firebaseio.com",
+            projectId: "django-tienda-421",
+            storageBucket: "django-tienda-421.appspot.com",
+            messagingSenderId: "683780809451",
+            appId: "1:683780809451:web:f5827c34d99f45e83354ae",
+            measurementId: "G-YNM6NGX2DJ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //firebase.analytics();
+
+
+
+        var provider = new firebase.auth.GoogleAuthProvider();
+
+
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            console.info(user);
+            // ...
+        }).catch(function(error) {
+            console.warn( error );
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
+
+    }
+
+  </script>
+
 {% endblock js %}
