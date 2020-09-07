@@ -19,3 +19,7 @@ psycopg2-pool==1.1
 py-postgresql==1.2.1
 pytz==2020.1
 mysqlclient==2.0.1
+
+# Firebase
+firebase-admin==4.3.0
+

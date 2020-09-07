@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "django-tienda-421",
+  "private_key_id": "01a3a575f659b309e7f6de9106a8ebcfd1b2a5c3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDIpHVvkFcophw8\nAxECMON5LY0+Gt7CYXElXcWngoUsNLoS7s/QVLGv89RtoJFzoxDjncD5FUsLt4l7\n1gzbo/BIyKXDQHf/fTjgnla6Ql1PnF1PY5zWgzjk7yEzxrvlI7N8Y8dVon4hGysJ\n8PX7xo4OCXNqFvpUXnqEcDc8sei8lEnEVROMFSZAz73ARtZQk/+LQ3+SYOjQQVzJ\nqcodbiuwE0oXZgY8tp7rn4d7Z+Hzrwa6/pG5OX/VxUkeMsIgyMDGsqzLqz904nVX\nIjrK8UYLQlplp5zmOT+GYrGS06UQZSY8EdDDk5zQBMppkL3ezcwlFwFeNlYxx+Xg\nSi4zwidHAgMBAAECggEAR4Jhvnzdq4Wka3kWT0cYU6B6Bgfym6m59zzYDK8Wgp5a\nMRQ/Kbt9xr2q2NWQ8XtNMiqP09aUdB0aWXH9DCz+HxqwBYpNGlhJdLjKJUEw24ZZ\ntUlF5ShIl0No/HiYj/6s4ij3qtwqgucZbEYejXkDORqCMW32EyrHFLuf3Dh2P/si\nMJ2mP/4YENc7pHKu9+tpA2SqvaWGGFFlGCvjbq5DOp+9gTC2k7bXfV2W3AC0Sg0h\nT/XdUUWWxZjtyq3QCkT2GDCLrIFRA1y3a0qRI7Hp7LRZrRBSi58OeLk9E3IwCTS9\nspCm+IYjFg1tiOHhZ8H1Qe6MALTZe5EQI6O74kef8QKBgQDrto2RdedSVBpzkFkr\nWoEhK1iy0ghl4y6rNinekcMD25q8XPEylRhVpyXBPMF5w3H72ZJiKPdnT8uE4zg5\nCWj50CEdlmbdPLjlvirD6ScBm1E93CPt+gEC3O2YuF79jgf8pPLfdP7TNhU7BLOs\nENJriETGvCa10/ZaVAWH0e5iNwKBgQDZ6TJEKSAOTHla0/9Grk2Pg3sMpSlvbKHK\nFQl6mIL7f2j7wd+6evIn7LZFhIJEtp2H8evKeitPL0d8U1uzHegElwtko3ntzhJf\nLmm2hjfUFCi9m36RuGCc5NIDadUgCGtHtIt619EORmt6sq5X9WPxHIe5IEHJ48AL\niv+JEbsbcQKBgQC+rfbn7REsMI0VX3hC8fvz8TTXs8DHa3idWDuWqSOxQz1xk14r\nJSGCaKzKHXQGJG1Y5zDb53f8QzjIT2dz/IDHVe70GG8uGakZcTT3Nu0vB445FJSc\nNtoKjt5F5SAyzWr4nhc7XVGnWuDh1XPjhdgy1RGOEzbdcJKhj8bJkLHfEQKBgAzp\nNzQ4p5CRUWNjSi266BeHt8OxCXpzmkZp5qzf2mriSqsX+pSG8lARQ19tEXbWxxCl\n8c2GXYiMiZTBL562N+gFtwQYd4Hygr4m9tZ8r1Qeead6Tg5+OSMyn4raO2lxdkHC\nXb1Cij1pSLb1XUUS4gAIK7Z5RcybdOZ6LtfFOCvRAoGANLUXafAkLMGA7FTY8F6U\n82jc7JOxBk+n3K4JVXox6ctY1b+3eHa0WQRKjW6Oqhou5k+ciLFi6gz77/slWUix\nQ78b9J7Hy9tGA7w/yHCfaIN3sEYGPzrQmKMArcLKE+eucA9Rnm3XSFEtKNcjHh/2\n+CmEFhPd7X2ahbwl03Tplr4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-diop8@django-tienda-421.iam.gserviceaccount.com",
+  "client_id": "111284228764817779116",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-diop8%40django-tienda-421.iam.gserviceaccount.com"
+}

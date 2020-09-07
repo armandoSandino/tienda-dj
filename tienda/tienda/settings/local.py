@@ -1,4 +1,8 @@
 from .base import *
+# for firebase
+import firebase_admin
+from firebase_admin import credentials, auth
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -40,3 +44,7 @@ STATICFILES_DIRS = [BASE_DIR.child('static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.child('media')
+
+#
+cred = credentials.Certificate("firebase-key.json")
+firebase_admin.initialize_app(cred)
