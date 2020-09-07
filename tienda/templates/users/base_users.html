@@ -53,6 +53,12 @@
             console.log(user.getIdToken() );
             console.log('**** id token *****');
             console.log(idToken);
+            user.getIdToken().then( function (TOKEN){
+                console.log('**** ID TOKEN de USUARIO **** ');
+                console.warn(TOKEN);
+            }).catch( function(error ) {
+                console.error(error);
+            }); 
             // ...
         }).catch(function(error) {
             console.warn( error );

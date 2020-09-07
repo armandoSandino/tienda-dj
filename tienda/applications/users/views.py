@@ -1,5 +1,7 @@
 # APIView es equivalente al FormView de Django
 from rest_framework.views import APIView
+from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
 
 #THIRD_PARTY_APPS
 from firebase_admin import auth
@@ -42,7 +44,6 @@ class GoogleLoginView(APIView):
         verified =token_decodificado['email_verified']
         
         # verificar si el usuario ya fue creado en la db
-
         el_usuario,  crear = User.objects.get_or_create(
             email=email,
             defaults= {
@@ -51,6 +52,24 @@ class GoogleLoginView(APIView):
                 'is_active': True
             }
         )
-        #
-        
-        return None
+        # SI el usuario se creo vamos a generar su token
+        if crear:
+            token = Token.objects.create(user=el_usuario)
+        else:
+            token = Token.objects.get(user=el_usuario)
+
+
+        userGet = {
+            'ID': el_usuario.pk,
+            'email': el_usuario.email,
+            'full_name': el_usuario.full_name,
+            'genero': el_usuario.genero,
+            'date_birth': el_usuario.date_birth,
+            'city': el_usuario.city
+        }
+
+        return Response({
+            'response': True,
+            'token': token.key,
+            'usuario': userGet
+        })
