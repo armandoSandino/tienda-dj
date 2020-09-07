@@ -1,5 +1,5 @@
 from django.shortcuts import render
-#
+# Generic views
 from django.views.generic import TemplateView
 
 class LoginUser(TemplateView):
