@@ -68,3 +68,25 @@ class ProcesoVentaSerializers(serializers.Serializer):
     productos = ProductoDetailSerializers(many=True)
 
 
+
+
+
+
+
+
+class ArrayIntergerSerializer( serializers.ListField ):
+
+    child = serializers.IntegerField()
+
+# serializers.Serializer, para serializar campos no relacionados a un modelo
+# Un serializador que serialize un array
+class ProcesoVentaSerializers2(serializers.Serializer):
+
+    type_invoce = serializers.CharField()
+    type_payment = serializers.CharField()
+    adreese_send = serializers.CharField()
+    #
+    productos = ArrayIntergerSerializer()
+    #
+    cantidades = ArrayIntergerSerializer()
+
