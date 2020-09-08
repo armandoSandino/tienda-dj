@@ -29,6 +29,7 @@ urlpatterns = [
         name='list-pruct-genero'
     ),
     # ListAPIView
+    # http://127.0.0.1:7000/api/product/filtrar/?man=False&woman=True&name=sarah
     path(
         'api/product/filtrar/',
         FiltrarProductos.as_view(),
