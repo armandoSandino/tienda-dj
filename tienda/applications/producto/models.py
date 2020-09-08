@@ -3,7 +3,8 @@ from django.conf import settings
 
 #
 from model_utils.models import TimeStampedModel
-
+# managers
+from .managers import ProductManager
 
 class Colors(models.Model):
     """ Representa color de un producto """
@@ -75,7 +76,9 @@ class Product(TimeStampedModel):
         on_delete=models.CASCADE,
         related_name="prod_created",
     )
-
+    # definir manager
+    objects = ProductManager()
+    
     class Meta:
         verbose_name = 'Producto'
         verbose_name_plural = 'Productos'
