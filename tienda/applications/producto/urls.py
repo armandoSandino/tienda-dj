@@ -2,7 +2,8 @@ from django.urls import path, re_path,include
 # views
 from .views import (
     ListProductUser,
-    ListProductoStock
+    ListProductoStock,
+    ListProductoGenero
 )
 
 app_name= 'product_app'
@@ -19,5 +20,11 @@ urlpatterns = [
         'api/product/con-stock/',
         ListProductoStock.as_view(),
         name='list-stock'
+    ),
+    # ListAPIView
+    path(
+        'api/producto/por-genero/<str:sexo>/',
+        ListProductoGenero.as_view(),
+        name='list-pruct-genero'
     )
 ]

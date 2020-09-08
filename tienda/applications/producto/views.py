@@ -46,3 +46,14 @@ class ListProductoStock(ListAPIView):
     def get_queryset(self):
 
         return Product.objects.productos_con_stock()
+
+
+class ListProductoGenero(ListAPIView):
+
+    # definir el serializador
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        # obtener variables por url
+        genero  = self.kwargs['sexo']
+        return Product.objects.productos_por_genero(genero)
