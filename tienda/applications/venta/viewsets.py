@@ -113,12 +113,20 @@ class ReporteVentasViewSet(viewsets.ViewSet):
             'response': True,
             'message': 'Success operations'
         })
+    
 
+    # retrieve, es el equivalente al DetailView que nos recupera un determinado registro
     def retrieve(self, request, pk=None):
         
+        # obtener la venta a mostrar
+        la_venta = Sale.objects.get(id=pk)
+        # serializar para responder
+        serializer = VentaReporteSerializers(la_venta,)
+
         return Response({
             'response': True,
-            'message': 'ups retrieve'
+            'message': 'Success operation',
+            'data': serializer.data
         })
 
     def update(self, request, pk=None):
