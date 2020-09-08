@@ -50,6 +50,14 @@ class SaleSerializers(serializers.ModelSerializer):
 
         return productos_serializados
 
+
+# serializers.Serializer, para serializar campos no relacionados a un modelo
+class ProductoDetailSerializers(serializers.Serializer):
+
+    pk = serializers.IntegerField()
+    count = serializers.IntegerField()
+
+
 # serializers.Serializer, para serializar campos no relacionados a un modelo
 class ProcesoVentaSerializers(serializers.Serializer):
 
@@ -59,9 +67,4 @@ class ProcesoVentaSerializers(serializers.Serializer):
     #
     productos = ProductoDetailSerializers(many=True)
 
-# serializers.Serializer, para serializar campos no relacionados a un modelo
-class ProductoDetailSerializers(serializers.Serializer):
-
-    pk = serializers.IntegerField()
-    count = serializers.IntegerField()
 
