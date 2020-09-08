@@ -90,6 +90,21 @@ class ProcesoVentaSerializers2(serializers.Serializer):
     #
     cantidades = ArrayIntergerSerializer()
 
+    # validar type_invoce, value es el valor actual de ese campo
+    def validate_type_invoce(self, value ):
+        if int(value) < 0 :
+            raise serializers.ValidationError('ingrese un tipo de pago correcto...')
+
+        return value
+
+    # validar todos los campos, data contiene todos los campos
+    def validate(self, data):
+
+        if ( int(data['type_payment'])  < 0) or ( int(data['type_payment']) >= 3 ) :
+            raise serializers.ValidationError('el metodo de pago no es correcto....')
+
+        return data
+
 
 class VentaReporteSerializers(serializers.ModelSerializer):
     # campo no definido en nuestro modelo
