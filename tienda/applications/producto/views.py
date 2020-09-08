@@ -57,3 +57,21 @@ class ListProductoGenero(ListAPIView):
         # obtener variables por url
         genero  = self.kwargs['sexo']
         return Product.objects.productos_por_genero(genero)
+
+ 
+class FiltrarProductos(ListAPIView):
+
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+
+        # obtener parametros
+        v = self.request.query_params.get('man', None)
+        m = self.request.query_params.get('woman', None)
+        name = self.request.query_params.get('name', None )
+        
+        return Product.objects.filtrar_productos(
+            varon=v,
+            mujer=m,
+            nombre=name
+        )

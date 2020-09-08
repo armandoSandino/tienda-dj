@@ -31,3 +31,12 @@ class ProductManager(models.Manager):
             man=varon,
             woman=mujer
         ).order_by('created')
+
+    # **filtros es un diccionario clave/valor
+    def filtrar_productos(self, **filtros ):
+
+        return self.filter(
+            man=filtros['varon'],
+            woman=filtros['mujer'],
+            name__icontains= filtros['nombre']
+        )

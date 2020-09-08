@@ -3,7 +3,8 @@ from django.urls import path, re_path,include
 from .views import (
     ListProductUser,
     ListProductoStock,
-    ListProductoGenero
+    ListProductoGenero,
+    FiltrarProductos
 )
 
 app_name= 'product_app'
@@ -26,5 +27,11 @@ urlpatterns = [
         'api/producto/por-genero/<str:sexo>/',
         ListProductoGenero.as_view(),
         name='list-pruct-genero'
+    ),
+    # ListAPIView
+    path(
+        'api/product/filtrar/',
+        FiltrarProductos.as_view(),
+        name='product-filter'
     )
 ]
