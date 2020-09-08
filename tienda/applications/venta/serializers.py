@@ -50,4 +50,18 @@ class SaleSerializers(serializers.ModelSerializer):
 
         return productos_serializados
 
+# serializers.Serializer, para serializar campos no relacionados a un modelo
+class ProcesoVentaSerializers(serializers.Serializer):
+
+    type_invoce = serializers.CharField()
+    type_payment = serializers.CharField()
+    adreese_send = serializers.CharField()
+    #
+    productos = ProductoDetailSerializers(many=True)
+
+# serializers.Serializer, para serializar campos no relacionados a un modelo
+class ProductoDetailSerializers(serializers.Serializer):
+
+    pk = serializers.IntegerField()
+    count = serializers.IntegerField()
 
