@@ -6,7 +6,8 @@ from model_utils.models import TimeStampedModel
 
 # local apps
 from applications.producto.models import Product
-
+# managers
+from .managers import SaleDetailManager
 
 class Sale(TimeStampedModel):
     """Modelo que representa a una Venta Global"""
@@ -104,7 +105,9 @@ class SaleDetail(TimeStampedModel):
     )
     anulate = models.BooleanField(default=False)
     #
-
+    # definir manager
+    objects = SaleDetailManager()
+    
     class Meta:
         verbose_name = 'Detalle Venta'
         verbose_name_plural = 'Detalles de una Venta'
