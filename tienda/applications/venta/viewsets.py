@@ -2,9 +2,10 @@
 from rest_framework import viewsets
 #
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework.response import Response 
 #
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 #
 from applications.producto.models import Product
@@ -21,13 +22,26 @@ class ReporteVentasViewSet(viewsets.ViewSet):
     authentication_classes = (TokenAuthentication,)
 
     # Definir los tipos de permisos tiene habilitados esta vista
-    permission_classes = [IsAuthenticated ] # IsAdminUser, IsAuthenticated
+    #permission_classes = [IsAuthenticated ] # IsAdminUser, IsAuthenticated
 
     # definir serializador, no es obligatorio
     # serializer_class = VentaReporteSerializers
 
     # definir el queryset es obligatorio
     queryset = Sale.objects.all()
+
+    # gestionar permisos para cada action de nuestro ViewSet
+    def get_permissions(self):
+        """
+        Instantiates and returns the list of permissions that this view requires.
+        """
+        if (self.action == 'list') or (self.action == 'retrieve'):
+            permission_classes = [AllowAny]
+        else:
+            permission_classes = [IsAuthenticated]
+
+        return [permission() for permission in permission_classes]
+
 
     # list, le permitira cambiar la forma en la que se listan los registros   
     def list(self, request, *args, **kwargs):
@@ -119,7 +133,10 @@ class ReporteVentasViewSet(viewsets.ViewSet):
     def retrieve(self, request, pk=None):
         
         # obtener la venta a mostrar
-        la_venta = Sale.objects.get(id=pk)
+        #la_venta = Sale.objects.get(id=pk)
+        queryset = Sale.objects.all()
+        la_venta = get_object_or_404(queryset, id=pk)
+        
         # serializar para responder
         serializer = VentaReporteSerializers(la_venta,)
 
