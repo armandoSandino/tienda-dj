@@ -3,7 +3,7 @@ from rest_framework.generics import (
     ListAPIView
 )
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 from django.shortcuts import render
 # serializers
@@ -21,7 +21,7 @@ class ListProductUser(ListAPIView):
     authentication_classes = (TokenAuthentication,)
 
     # Definir los tipos de permisos tiene habilitados esta vista
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated] # IsAdminUser, IsAuthenticated
 
     def get_queryset(self):
         
